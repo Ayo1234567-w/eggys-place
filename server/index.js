@@ -2,16 +2,20 @@ import express from "express";
 import { connect } from "./config/db.js";
 import dotenv from "dotenv";
 import productRoute from "./routes/productRoute.js";
+import authRoute from "./routes/authRoute.js"
+import cors from "cors"
+
 
 const app = express();
-
+app.use(cors())
 const port = process.env.PORT || 4040;
 dotenv.config()
 // http://localhost:4040/api/product/create
 
 app.use(express.json());
 // api routes
-app.use("/api/product", productRoute)
+app.use("/api/product", productRoute);
+app.use("/api/auth",authRoute)
 
 
 
