@@ -28,7 +28,7 @@ const SignIn = ({ switchToHome, switchToSignUp }) => {
   });
   const onSubmit = async (data) => {
     try {
-      const req = await fetch(`${baseUrl}/api/auth/sign-in`, {
+      const req = await fetch(`https://eggys-place-grn2.onrender.com/api/auth/sign-in`, {
         method: "POST",
         headers: {
           "content-Type": "application/json",
